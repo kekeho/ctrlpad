@@ -1,0 +1,45 @@
+div.hotkeypad-col {
+  padding: 0.5rem;
+}
+
+div.hotkeypad-col div {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.3rem 2rem #b7b7b7;
+}
+
+body {
+  background: #ffffff;
+}
+
+div.hotkeypad-col div h1 {
+  text-align: center;
+  color: #6c6c6c;
+  vertical-align: middle;
+  padding: 1rem;
+}
+
+.navbar {
+  background: linear-gradient(45deg, #82c3ff, #ffbef5);
+  border-radius: 0.5rem;
+  margin: 1.5rem;
+  box-shadow: 0.3rem 0.3rem 2rem #b7b7b7;
+}
+
+a.nav-link {
+  color: white !important;
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.row.hotkeypad {
+  margin: 1rem;
+}
+
+div.hotkeypad-col div {
+}
+
