@@ -32,6 +32,14 @@ class Key():
         self.pads[gen_uuid] = {'name': name, 'hotkey': hot_key}
         self.update_setting()
 
+    def del_pad(self, pad_id):
+        """delete pad
+        Arg:
+            pad_id: uuid. delete pad which has pad_id
+        """
+        del self.pads[pad_id]
+        self.update_setting()
+
 
 # FOR DEBUG
 if __name__ == "__main__":

@@ -33,5 +33,18 @@ def add():
         return redirect('/')
 
 
+@app.route('/delete', methods=['GET', 'POST'])
+def delete():
+    if request.method == 'GET':
+        # View
+        return render_template('index.html', pads=KEY.pads, del_mode=True)
+
+    else:
+        # POST
+        pad_id = request.form.getlist('pad_id')[0]
+        KEY.del_pad(pad_id)
+        return redirect('/delete')
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, debug=True)

@@ -27,6 +27,7 @@ div.hotkeypad-col div h1 {
   color: #6c6c6c;
   vertical-align: middle;
   padding: 1rem;
+  margin: 0;
 }
 
 .navbar {
@@ -48,4 +49,11 @@ a.nav-link {
 
 .row.hotkeypad {
   margin: 1rem;
+}
+
+p.delete {
+  text-align: right;
+  margin: 0 1rem;
+  margin-bottom: -1rem;
+  font-size: 2rem;
 }

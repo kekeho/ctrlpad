@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 
 {% block contents %}
+    {% if edit_mode %}
+        <h1 style="text-align: center;">Edit mode</h1>
+    {% endif %}
     <div class="row hotkeypad">
         {% for id, pad in pads.items() %}
             <div class="col-xm-12 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
                 <form action="/tap" name="form{{ loop.index0 }}" method="POST">
                     <input type="hidden" name="pad_id" value="{{ id }}">
                     <div>
+                        {% if del_mode %}
+                            <a href="javascript:form{{ loop.index0 }}_delete.submit()">
+                                <p class="delete">del</p>
+                            </a>                
+                        {% endif %}
                         <a href="javascript:form{{ loop.index0 }}.submit()">
                             <h1>{{ pad["name"] }}</h1>
                         </a>
@@ -15,4 +23,11 @@
             </div>
         {% endfor %}
     </div>
+    {% if del_mode %}
+        {% for id, pad in pads.items() %}
+            <form action="/delete" name="form{{ loop.index0 }}_delete" method="POST">
+                <input type="hidden" name="pad_id" value="{{ id }}">
+            </form>
+        {% endfor %}
+    {% endif %}
 {% endblock contents %}
