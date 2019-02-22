@@ -18,5 +18,20 @@ def tap():
     return redirect('/')
 
 
+@app.route('/add', methods=['GET', 'POST'])
+def add():
+    if request.method == 'GET':
+        # View
+        return render_template('add.html')
+
+    else:
+        # request.method = POST
+        # add pad to settings
+        name = request.form.getlist('name')[0]
+        keys = request.form.getlist('keys')[0].split()
+        KEY.add_pad(name, *keys)
+        return redirect('/')
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, debug=True)
