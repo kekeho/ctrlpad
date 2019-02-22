@@ -1,20 +1,27 @@
 import pyautogui
+import json
 
 
 class Key():
-    def __init__(self, *args, **kwargs):
-        pass
+    def __init__(self, setting_json_filename):
+        self.setting_json_filename = setting_json_filename
+        with open(setting_json_filename) as pads_file:
+            self.pads = json.load(pads_file)
 
-    def hotkey(self, *keys):
-        """type keys at same time
+    def update_setting(self):
+        with open(self.setting_json_filename) as pads_file:
+            self.pads = json.load(pads_file)
+
+    def tap(self, pad_id):
+        """When tapped pad, call this function.
+        This function press hotkey.
         Arg:
-            *keys: hotkeys
-                example: ('ctrl', 'c')
+            pad_id: pad's uuid
         """
-        pyautogui.hotkey(*keys)
+        key = self.pads[pad_id]['hotkey']
+        pyautogui.hotkey(*key)
 
 
 # FOR DEBUG
 if __name__ == "__main__":
     key = Key()
-    key.hotkey('command', 'space')  # launch spotlight

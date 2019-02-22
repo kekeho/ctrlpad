@@ -1,0 +1,10 @@
+{
+    "d5ab2eca-5984-441a-8157-0c6e18cb1ec9": {
+        "name": "undo",
+        "hotkey": ["command", "z"]
+    },
+    "5689671f-5a89-48b2-ac6d-1fce25ed33e5": {
+        "name": "save",
+        "hotkey": ["command", "s"]
+    }
+}

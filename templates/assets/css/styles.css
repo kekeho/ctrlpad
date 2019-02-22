@@ -8,6 +8,16 @@ div.hotkeypad-col div {
   box-shadow: 0.3rem 0.3rem 2rem #b7b7b7;
 }
 
+/* div.row.hotkeypad-col div a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -999px;
+  z-index: 2;
+} */
+
 body {
   background: #ffffff;
 }

@@ -24,46 +24,18 @@
         </div>
     </nav>
     <div class="row hotkeypad">
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
-            <div>
-                <h1>p1</h1>
+        {% for id, pad in pads.items() %}
+            <div class="col-xm-12 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
+                <form action="/tap" name="form{{ loop.index0 }}" method="POST">
+                    <input type="hidden" name="pad_id" value="{{ id }}">
+                    <div>
+                        <a href="javascript:form{{ loop.index0 }}.submit()">
+                            <h1>{{ pad["name"] }}</h1>
+                        </a>
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
-            <div>
-                <h1>p2</h1>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
-            <div>
-                <h1>p2</h1>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
-            <div>
-                <h1>p2</h1>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
-            <div>
-                <h1>p2</h1>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
-            <div>
-                <h1>p2</h1>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
-            <div>
-                <h1>p2</h1>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 hotkeypad-col">
-            <div>
-                <h1>p2</h1>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
